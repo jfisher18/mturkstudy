@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <title>Dynamic Breakpoints</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <div id = "intro" class = "viewscreen">
+    In this experiment, you will perform three data analysis tasks using an interactive visualization.<br>
+    We will first show you a tutorial to help familiarize you with the visualization.<br>
+    Then you will complete the analysis tasks.<br>
+    Please try to answer the tasks accurately and quickly.<br>
+    Tasks should be performed using visual judgements, unaided by fingers, rulers,<br>or other external tools.<br>
+    <button class = "nicebutton" onclick="dummyData();">Next</button>
+  </div>
+  <div id = "begintask0" class = "viewscreen">
+    You will now use the same visualization to analyze 30 years of oil prices.<br>
+    For each task, the questions will be at the top of the web page.<br>
+    When you are ready to answer the questions, press the button at the bottom of the screen.<br>
+    When you click the button, the visualization will disappear, so please remember your answers.<br>
+    <button class = "nicebutton" onclick="taskStart();">Begin</button>
+  </div>
+  <div id = "submitAnswer" class = "viewscreen">
+    Put your answers below:<br>
+    <form id = "submission" action = "javascript:submit()">
+      <div id = "year">
+        <label for="yearAns" id = "yearLabel">year</label>
+        <select id="yearAns" name="yearAns">
+        <option value=""></option>
+        <option value="1988">1988</option>
+        <option value="1989">1989</option>
+        <option value="1990">1990</option>
+        <option value="1991">1991</option>
+        <option value="1992">1992</option>
+        <option value="1993">1993</option>
+        <option value="1994">1994</option>
+        <option value="1995">1995</option>
+        <option value="1996">1996</option>
+        <option value="1997">1997</option>
+        <option value="1998">1998</option>
+        <option value="1999">1999</option>
+        <option value="2000">2000</option>
+        <option value="2001">2001</option>
+        <option value="2002">2002</option>
+        <option value="2003">2003</option>
+        <option value="2004">2004</option>
+        <option value="2005">2005</option>
+        <option value="2006">2006</option>
+        <option value="2007">2007</option>
+        <option value="2008">2008</option>
+        <option value="2009">2009</option>
+        <option value="2009">2010</option>
+        <option value="2011">2011</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+      </select><br>
+      </div>
+      <div id = "month">
+        <label for="monthAns" id = "monthLabel">month</label>
+        <select id="monthAns" name="monthAns">
+          <option value=""></option>
+          <option value="January">January</option>
+          <option value="February">February</option>
+          <option value="March">March</option>
+          <option value="April">April</option>
+          <option value="May">May</option>
+          <option value="June">June</option>
+          <option value="July">July</option>
+          <option value="August">August</option>
+          <option value="September">September</option>
+          <option value="October">October</option>
+          <option value="November">November</option>
+          <option value="December">December</option>
+        </select>
+        <br>
+      </div>
+      <div id = "value">
+        <label for="valueAns" id = "valueLabel">value</label>
+        <input type="number" id="valueAns" name="valueAns"><br>
+      </div>
+      <input class = "nicebutton" type="submit" value="Submit">
+    </form>
+  </div>
+  <div id = "begintask" class = "viewscreen">
+    Thank you for finishing the task!<br>
+    <br>How mentally demanding was the task?<br>
+    Very Low<input class="slider rater" type="range" id="mental" min="1" max="7" value="4" step="1">Very High<br>
+
+    <br>How succesful were you in accomplishing what you were asked to do?<br>
+    Failure<input class="slider rater" type="range" id="performance" min="1" max="7" value="4" step="1">Perfect<br>
+
+    <br>How hard did you have to work to accomplish your level of performance?<br>
+    Vey Low<input class="slider rater" type="range" id="effort" min="1" max="7" value="4" step="1">Very High<br>
+
+    <br>How insecure, discouraged, irritated, stressed, and annoyed were you?<br>
+    Very Low<input class="slider rater" type="range" id="frustration" min="1" max="7" value="4" step="1">Very High<br>
+
+    <br>Please describe your strategy for performing the task:<br>
+    <textarea id="textArea" rows="4" cols="50"></textarea>
+    <br>
+    <button class = "nicebutton" onclick="taskStart();">Begin next task</button>
+  </div>
+  <div id = "done" class = "viewscreen">
+    You are finished with the tasks!<br>
+    Is there anything else that you'd like to comment on?<br>
+    <textarea id="finalComment" rows="4" cols="50"></textarea>
+    <br>
+    <button class = "nicebutton" onclick="finalEnding();">Submit</button>
+  </div>
+  <div id = "veryFinal" class = "viewscreen">
+    Thank you for participating!
+  </div>
+  <div id = "tool">
+    <h1 id = "taskQuestion" text-align="center"></h1>
+    <div id = "tutorial" text-align="center">
+      <h3>The slider below controls what year you're viewing.</h3>
+      <span id ="optionalScale">
+        <h3>Note that the y-axis may change as you move the slider.</h3>
+      </span>
+      <h3>When you are comfortable using the slider to control the visualization, press "Done with Training" below.</h3>
+    </div>
+    <div>
+      <input class="slider" type="range" id="slider">
+      <h1 id = "query"></h1>
+    </div>
+    <div id="vis"></div>
+    <div id="submit">
+      <form id = "doneDummyIntro" action = "javascript:doneDummy()">
+        <input class = "nicebutton" type="submit" value="Done with training">
+      </form>
+      <form id = "haveAnswer" action = "javascript:answers()">
+        <input class = "nicebutton" type="submit" value="Ready to answer">
+      </form>
+    </div>
+  </div>
+
+<script src="js/viz.js"></script>
+</body>
