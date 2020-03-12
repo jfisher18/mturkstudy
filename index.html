@@ -6,7 +6,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <title>Dynamic Breakpoints</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div id = "intro" class = "viewscreen">
@@ -90,6 +90,17 @@
       <input class = "nicebutton" type="submit" value="Submit">
     </form>
   </div>
+  <div id ="qualTask" class = "viewscreen">
+    <form id = "qualTaskForm" action = "javascript:checkQualTask()">
+      Enter your answer to the question to proceed:<br>
+      <select id = "qualTaskQ" name = "qualTaskQ">
+        <option value = ""></option>
+        <option value = "yes">Yes</option>
+        <option value = "no">No</option>
+      </select><br>
+      <input class = "nicebutton" type="submit" value="Submit">
+    </form>
+  </div>
   <div id = "begintask" class = "viewscreen">
     Thank you for finishing the task!<br>
     <br>How mentally demanding was the task?<br>
@@ -107,13 +118,39 @@
     <br>Please describe your strategy for performing the task:<br>
     <textarea id="textArea" rows="4" cols="50"></textarea>
     <br>
-    <button class = "nicebutton" onclick="taskStart();">Begin next task</button>
+    <button class = "nicebutton" onclick="taskStart();" id = "nextTaskButton">Begin next task</button>
   </div>
   <div id = "done" class = "viewscreen">
     You are finished with the tasks!<br>
+    Some final information:<br>
+    What is your age?<br>
+    <select id="age" name="age">
+      <option value=""></option>
+      <option value="under20">19 years old or younger</option>
+      <option value="20s">20 to 29 years old</option>
+      <option value="30s">30 to 39 years old</option>
+      <option value="40s">40 to 49 years old</option>
+      <option value="50s">50 to 59 years old</option>
+      <option value="60s">60 to 69 years old</option>
+      <option value="70s">70 to 79 years old</option>
+      <option value="over79">80 years old or older</option>
+    </select><br>
+    What is your level of education?<br>
+    <select id="education" name="age">
+      <option value=""></option>
+      <option value="lessThanHS">Less than high school degree</option>
+      <option value="HS">High school degree or equivalent</option>
+      <option value="someCollege">Some college, but no degree</option>
+      <option value="associate">Associate degree</option>
+      <option value="Bachelor">Bachelor's degree</option>
+      <option value="graduate">Graduate degree</option>
+    </select><br>
+    <div id ="breakpointsCommentDiv">
+      Did you have difficulty with the scale changing?<br>
+      <textarea id="breakpointsComment" rows="4" cols="50"></textarea><br>
+    </div>
     Is there anything else that you'd like to comment on?<br>
-    <textarea id="finalComment" rows="4" cols="50"></textarea>
-    <br>
+    <textarea id="finalComment" rows="4" cols="50"></textarea><br>
     <button class = "nicebutton" onclick="finalEnding();">Submit</button>
   </div>
   <div id = "veryFinal" class = "viewscreen">
@@ -126,7 +163,8 @@
       <span id ="optionalScale">
         <h3>Note that the y-axis may change as you move the slider.</h3>
       </span>
-      <h3>When you are comfortable using the slider to control the visualization, press "Done with Training" below.</h3>
+      <h3>On the next page, you'll need to answer the question "Is there a month in 1999 where the oil price was above $75?"</h3>
+      <h3>When you are comfortable using the slider to control the visualization and have determined the answer to the question, press "Done with Training" below.</h3>
     </div>
     <div>
       <input class="slider" type="range" id="slider">
@@ -143,5 +181,5 @@
     </div>
   </div>
 
-<script src="js/viz.js"></script>
+<script src="viz.js"></script>
 </body>

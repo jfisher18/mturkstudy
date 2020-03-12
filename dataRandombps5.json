@@ -1,0 +1,1783 @@
+{
+    "query": "SELECT * FROM monthly_prices WHERE YEAR = ?",
+    "start": 1988.0,
+    "stop": 2018.0,
+    "step": 1.0,
+    "encoding": "line",
+    "gmax": 110.0,
+    "gmin": 1.0,
+    "xname": "month",
+    "yname": "price",
+    "label": "Year",
+    "tasks": [
+        {
+            "question": "What year had the highest March price, and what is that price?",
+            "answers": [
+                {
+                    "type": "year",
+                    "label": "Year"
+                },
+                {
+                    "type": "value",
+                    "label": "Price"
+                }
+            ]
+        },
+        {
+            "question": "What is the difference in prices between April 1998 and September 1998?",
+            "answers": [
+                {
+                    "type": "value",
+                    "label": "Difference"
+                }
+            ]
+        },
+        {
+            "question": "In how many years was the price for August within $5 of the price for February?",
+            "answers": [
+                {
+                    "type": "value",
+                    "label": "Number of years"
+                }
+            ]
+        }
+    ],
+    "data": [
+        {
+            "index": 1988.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 1988",
+            "max": 45.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 2.0,
+                    "price": 11.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 6.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 12.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 19.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 1.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 18.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 1.0,
+                    "price": 9.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 3.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 11.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 6.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 6.0
+                }
+            ]
+        },
+        {
+            "index": 1989.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 1989",
+            "max": 45.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 3.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 11.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 19.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 11.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 20.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 3.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 11.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 17.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 11.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 11.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 3.0
+                }
+            ]
+        },
+        {
+            "index": 1990.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 1990",
+            "max": 45.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 3.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 13.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 17.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 9.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 7.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 23.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 3.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 9.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 25.0
+                },
+                {
+                    "month": 1.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 3.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 11.0
+                }
+            ]
+        },
+        {
+            "index": 1991.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 1991",
+            "max": 45.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 3.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 14.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 14.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 27.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 7.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 2.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 12.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 1.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 29.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 2.0
+                }
+            ]
+        },
+        {
+            "index": 1992.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 1992",
+            "max": 45.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 30.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 17.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 17.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 23.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 28.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 23.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 12.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 33.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 15.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 17.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 17.0
+                }
+            ]
+        },
+        {
+            "index": 1993.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 1993",
+            "max": 45.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 5.0
+                }
+            ]
+        },
+        {
+            "index": 1994.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 1994",
+            "max": 45.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 16.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 7.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 39.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 27.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 10.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 26.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 9.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 15.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 12.0
+                }
+            ]
+        },
+        {
+            "index": 1995.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 1995",
+            "max": 45.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 14.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 1.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 40.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 14.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 30.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 36.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 9.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 39.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 13.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 16.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 12.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 24.0
+                }
+            ]
+        },
+        {
+            "index": 1996.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 1996",
+            "max": 45.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 15.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 19.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 15.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 29.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 37.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 27.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 45.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 11.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 1.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 9.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 3.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 31.0
+                }
+            ]
+        },
+        {
+            "index": 1997.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 1997",
+            "max": 53.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 9.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 27.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 9.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 21.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 49.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 45.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 45.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 21.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 23.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 37.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 5.0
+                }
+            ]
+        },
+        {
+            "index": 1998.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 1998",
+            "max": 53.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 42.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 2.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 30.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 15.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 42.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 23.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 1.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 19.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 51.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 23.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 30.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 12.0
+                }
+            ]
+        },
+        {
+            "index": 1999.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 1999",
+            "max": 53.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 21.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 41.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 23.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 37.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 53.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 31.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 43.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 23.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 9.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 49.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 5.0
+                }
+            ]
+        },
+        {
+            "index": 2000.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2000",
+            "max": 53.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 45.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 13.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 13.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 45.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 11.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 21.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 45.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 43.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 29.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 19.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 53.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 43.0
+                }
+            ]
+        },
+        {
+            "index": 2001.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2001",
+            "max": 69.0,
+            "min": 7.0,
+            "records": [
+                {
+                    "month": 2.0,
+                    "price": 34.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 40.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 19.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 29.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 52.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 40.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 8.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 36.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 27.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 43.0
+                },
+                {
+                    "month": 1.0,
+                    "price": 20.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 27.0
+                }
+            ]
+        },
+        {
+            "index": 2002.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2002",
+            "max": 69.0,
+            "min": 7.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 31.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 31.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 13.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 12.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 37.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 43.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 40.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 37.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 37.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 46.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 48.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 55.0
+                }
+            ]
+        },
+        {
+            "index": 2003.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2003",
+            "max": 69.0,
+            "min": 7.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 25.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 29.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 15.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 39.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 11.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 69.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 25.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 7.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 7.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 59.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 49.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 45.0
+                }
+            ]
+        },
+        {
+            "index": 2004.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2004",
+            "max": 81.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 34.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 60.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 51.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 25.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 57.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 12.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 53.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 24.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 11.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 34.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 14.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 21.0
+                }
+            ]
+        },
+        {
+            "index": 2005.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2005",
+            "max": 81.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 22.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 53.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 33.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 40.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 61.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 77.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 31.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 11.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 42.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 4.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 61.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 76.0
+                }
+            ]
+        },
+        {
+            "index": 2006.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2006",
+            "max": 81.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 3.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 45.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 17.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 49.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 41.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 13.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 21.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 69.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 19.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 23.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 57.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 35.0
+                }
+            ]
+        },
+        {
+            "index": 2007.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2007",
+            "max": 81.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 43.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 21.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 69.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 37.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 21.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 53.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 43.0
+                }
+            ]
+        },
+        {
+            "index": 2008.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2008",
+            "max": 81.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 26.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 41.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 43.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 81.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 77.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 66.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 56.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 10.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 20.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 60.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 1.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 65.0
+                }
+            ]
+        },
+        {
+            "index": 2009.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2009",
+            "max": 97.0,
+            "min": 0.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 87.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 61.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 73.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 55.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 79.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 13.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 43.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 43.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 25.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 41.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 13.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 51.0
+                }
+            ]
+        },
+        {
+            "index": 2010.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2010",
+            "max": 97.0,
+            "min": 0.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 29.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 79.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 21.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 67.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 89.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 11.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 29.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 37.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 69.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 9.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 13.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 47.0
+                }
+            ]
+        },
+        {
+            "index": 2011.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2011",
+            "max": 97.0,
+            "min": 0.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 77.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 79.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 34.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 56.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 55.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 33.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 27.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 67.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 77.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 59.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 36.0
+                }
+            ]
+        },
+        {
+            "index": 2012.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2012",
+            "max": 97.0,
+            "min": 0.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 69.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 69.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 69.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 37.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 37.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 27.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 27.0
+                }
+            ]
+        },
+        {
+            "index": 2013.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2013",
+            "max": 97.0,
+            "min": 0.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 25.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 1.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 71.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 51.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 37.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 87.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 23.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 7.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 5.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 97.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 15.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 75.0
+                }
+            ]
+        },
+        {
+            "index": 2014.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2014",
+            "max": 97.0,
+            "min": 0.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 19.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 35.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 81.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 17.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 19.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 16.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 46.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 21.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 0.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 93.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 51.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 40.0
+                }
+            ]
+        },
+        {
+            "index": 2015.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2015",
+            "max": 110.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 97.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 93.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 66.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 1.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 50.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 92.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 56.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 35.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 39.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 68.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 13.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 37.0
+                }
+            ]
+        },
+        {
+            "index": 2016.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2016",
+            "max": 110.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 2.0,
+                    "price": 15.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 37.0
+                },
+                {
+                    "month": 1.0,
+                    "price": 49.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 79.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 29.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 93.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 103.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 105.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 65.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 11.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 19.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 89.0
+                }
+            ]
+        },
+        {
+            "index": 2017.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2017",
+            "max": 110.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 33.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 7.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 55.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 37.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 85.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 105.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 33.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 43.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 75.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 85.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 99.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 93.0
+                }
+            ]
+        },
+        {
+            "index": 2018.0,
+            "query": "SELECT * FROM monthly_prices WHERE YEAR = 2018",
+            "max": 110.0,
+            "min": 1.0,
+            "records": [
+                {
+                    "month": 1.0,
+                    "price": 93.0
+                },
+                {
+                    "month": 2.0,
+                    "price": 94.0
+                },
+                {
+                    "month": 3.0,
+                    "price": 110.0
+                },
+                {
+                    "month": 4.0,
+                    "price": 73.0
+                },
+                {
+                    "month": 5.0,
+                    "price": 102.0
+                },
+                {
+                    "month": 6.0,
+                    "price": 1.0
+                },
+                {
+                    "month": 7.0,
+                    "price": 62.0
+                },
+                {
+                    "month": 8.0,
+                    "price": 36.0
+                },
+                {
+                    "month": 9.0,
+                    "price": 7.0
+                },
+                {
+                    "month": 10.0,
+                    "price": 38.0
+                },
+                {
+                    "month": 11.0,
+                    "price": 43.0
+                },
+                {
+                    "month": 12.0,
+                    "price": 76.0
+                }
+            ]
+        }
+    ]
+}
