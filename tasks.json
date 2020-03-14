@@ -1,0 +1,38 @@
+{
+  "tasks": [
+    {
+        "question": "What year had the highest March price, and what is that price?",
+        "answers": [
+            {
+                "type": "year",
+                "label": "Year"
+            },
+            {
+                "type": "value",
+                "label": "Price"
+            }
+        ]
+    },
+    {
+        "question": "What is the difference in prices between April 1998 and September 1998?",
+        "answers": [
+            {
+                "type": "value",
+                "label": "Difference"
+            }
+        ]
+    },
+    {
+        "question": "In how many years was the price for August within $5 of the price for February?",
+        "answers": [
+            {
+                "type": "value",
+                "label": "Number of years"
+            }
+        ]
+    }
+  ],
+  "qualtask": {
+    "question": "Is there a month in 1999 where the oil price was above $75?"
+  }
+}

@@ -1,3 +1,67 @@
+
+var experiment = {
+  name: 'bp_existence_study',
+  task: 'bp_existence_study',
+  failQualification: "true",//FIX
+  researcher: 'jfisher',
+  numTasks: 3,//4?
+  params: {
+    "name":"bp_existence_study",
+    "params":[
+      {
+        "name": "method",
+        "type":"UniformChoice",
+        "options":["breakpoints1", "breakpoints3", "breakpoints5", "global", "per-chart"]
+      }
+    ]
+  },
+  viewTask: viewTask,
+  clearTask: clearTask,
+  finish: finish,
+}
+
+var method, dataFName, dataRandomFName;
+
+
+var training = true;
+
+async function viewTask(opts) {
+    var params = opts.params;
+    console.log("view task");
+    method = params['method']
+    if (method == "breakpoints3"){
+      dataFName = "databps3.json"
+      dataRandomFName = "dataRandombps3.json"
+    } else if (method == "breakpoints5"){
+      dataFName = "databps5.json"
+      dataRandomFName = "dataRandombps5.json"
+    } else{
+      dataFName = "databps1.json"
+      dataRandomFName = "dataRandombps1.json"
+    }
+    $('#taskno').text(cur_task);
+    if(training){
+      await load_data(dataRandomFName)
+    } else {
+      await load_data(dataFName)
+    }
+    show("tool")
+    updateData()
+    console.log("UPDATING DATA")
+    console.log(params);
+}
+
+function clearTask(params) {
+  console.log('clearTask');
+  console.log(params);
+}
+
+function finish(params) {
+  console.log('finish');
+  // opt.submit();
+}
+
+
 let max = 0;
 let slider = document.querySelector('#slider');
 let mentalSlider = document.querySelector('#mental');
@@ -15,7 +79,6 @@ let textArea = document.getElementById('textArea');
 let nextTaskButton = document.getElementById('nextTaskButton');
 
 let inputs = ["year", "month", "value"];
-
 
 function hide(id){
   $(`#${id}`).hide()
@@ -57,15 +120,14 @@ let spec_base = {
   }
 }
 var dataMap = new Map();
-var dataMapRandom = new Map();
+var fileLoaded = ""
 var xname = "";
 var yname = "";
 var encoding = "";
 var gmax = 0;
 var gmin = 0;
-var method = "";
 var label = "";
-var tasks = [];
+var task_data;
 var task_order = [];
 var cur_task = -1;
 var tasks_results = [];
@@ -74,6 +136,9 @@ var time_took;
 var qualTask;
 
 async function load_data(fname) {
+  if(fileLoaded == fname){
+    return 0
+  }
   await $.getJSON(fname, function(config) {
     console.log(fname)
     xname = config['xname'];
@@ -98,13 +163,12 @@ async function load_data(fname) {
       dataMap.set(parseFloat(index['index']),index)
     }
     qualTask = config['qualTask']
-    tasks = config['tasks']
     task_order = []
     range = []
-    for (var i = 0; i < tasks.length; i++) {
+    for (var i = 0; i < task_data.length; i++) {
       range.push(i)
     }
-    for (var i = 0; i < tasks.length; i++) {
+    for (var i = 0; i < task_data.length; i++) {
       index = Math.floor(Math.random() * (range.length));
       task_order.push(range[index])
       range.splice(index, 1)
@@ -117,34 +181,20 @@ async function load_data(fname) {
     var steps = Math.floor((config['stop']-config['start'])/config['step']/2)
     slider.value = config['start']+steps*config['step'];
     vegaEmbed('#vis', {});
-    query.innerText = ""
+    query.innerText = "";
+    fileLoaded = fname;
   });
 }
 
 //INITAL WORK
 $(document).ready(function() {
-  var dataFName;
-  var dataRandomFName;
-  var methods = ["global", "per-chart", "breakpoints1", "breakpoints3", "breakpoints5"]
-  method = methods[Math.floor(Math.random() * methods.length)];
-  if (method == "breakpoints3"){
-    dataFName = "databps3.json"
-    dataRandomFName = "dataRandombps3.json"
-  } else if (method == "breakpoints5"){
-    dataFName = "databps5.json"
-    dataRandomFName = "dataRandombps5.json"
-  } else{
-    dataFName = "databps1.json"
-    dataRandomFName = "dataRandombps1.json"
-  }
-
-  load_data(dataRandomFName)
-}
-
-// var e = gpaas.startExperiment(setupExperiment);
-// if (e.setupSuccessful) {
-//   e.run();
-// }
+  console.log("READY")
+  $.getJSON("./tasks.json", function(data) {
+    console.log(data['tasks'])
+    let i = 2/0
+    task_data = data['tasks']
+  })
+})
 
 
 
@@ -194,10 +244,12 @@ function updateData() {
 }
 
 function dummyData() {
+  var exp = gpaas.startExperiment(() => { return experiment; });
+  exp.run();
   hide("intro")
   hide("haveAnswer")
   show("tool")
-  updateData();
+  // updateData();
   show("doneDummyIntro")
   show("tutorial")
   if(method == "global"){
@@ -217,7 +269,7 @@ function doneDummy() {
 }
 
 function checkQualTask(){
-  nextQualification($('#qualTaskQ').val()=="no")
+  //gpass.nextQualification($('#qualTaskQ').val()=="no")
   hide("qualTask")
   show("begintask0")
 }
@@ -229,7 +281,8 @@ function answers() {
   for (let inputName of inputs) {
     hide("inputName")
   }
-  for (let input of tasks[task_order[cur_task]].answers) {
+  console.log(task_data, task_order[cur_task], task_order, cur_task)
+  for (let input of task_data[task_order[cur_task]].answers) {
     show(input.type)
     document.getElementById(`${input.type}Label`).innerText = input.label+":"
   }
@@ -241,7 +294,7 @@ async function taskStart() {
   if(cur_task >= 0){
     var vals = {}
     var answers = []
-    for (let inputName of tasks[task_order[cur_task]].answers) {
+    for (let inputName of task_data[task_order[cur_task]].answers) {
       var input = document.getElementById(inputName.type+"Ans")
       answers.push(input.value)
       input.value = ""
@@ -264,13 +317,16 @@ async function taskStart() {
     await load_data(dataFName)
   }
   cur_task++
-  // gpaas.nextTask();
+  console.log("YO")
+  gpaas.nextTask();
   hide("begintask")
   hide("begintask0")
-  if(cur_task>=tasks.length) {
+  if(cur_task>=task_data.length) {
     show("done")
   } else {
-    taskQuestion.innerHTML = `Task ${cur_task+1}:<br>${tasks[task_order[cur_task]].question}`
+    console.log("TASK")
+    console.log(task_data)
+    taskQuestion.innerHTML = `Task ${cur_task+1}:<br>${task_data[task_order[cur_task]].question}`
     show("tool")
     updateData();
     var d = new Date();
@@ -296,7 +352,7 @@ function finalEnding(){
 
 function submit() {
   hide("submitAnswer")
-  if(cur_task==tasks.length-1){
+  if(cur_task==task_data.length-1){
     nextTaskButton.innerText = "Proceed to final information"
   }
   show("begintask")

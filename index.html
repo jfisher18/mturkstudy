@@ -3,10 +3,10 @@
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./jquery.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="./style.css">
   <title>Dynamic Breakpoints</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div id = "intro" class = "viewscreen">
@@ -136,7 +136,7 @@
       <option value="over79">80 years old or older</option>
     </select><br>
     What is your level of education?<br>
-    <select id="education" name="age">
+    <select id="education" name="education">
       <option value=""></option>
       <option value="lessThanHS">Less than high school degree</option>
       <option value="HS">High school degree or equivalent</option>
@@ -181,5 +181,6 @@
     </div>
   </div>
 
-<script src="viz.js"></script>
+<script src="api.js"></script>
+<script src="experiment.js"></script>
 </body>
